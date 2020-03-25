@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Application and Need</title>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/custom.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>   
+</head>
+
+<body>
+<!-- Navigation -->
+    <nav id="siteNav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Logo and responsive toggle -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://hackathon.zarfamu.com">
+                    HACK AMU
+                </a>
+            </div>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="{{url_for('index')}}">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="about-us">
+                            <li><a href="{{url_for('textanalysis')}}">Text Analyser</a></li>
+                            <li><a href="{{url_for('tweeterEx')}}">Tweets Analyser</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{{url_for('index')}}#cont">Contact</a>
+                    </li>
+                </ul>
+                
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
+    <!-- Intro Section -->
+    <section class="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h1 class="section-heading">Application and Need</h1>
+                    <p class="text-light">Today, almost everyone has a social profile online, innocently putting all their personal information for anyone to see. Online interactions like VoIP calls, text chats, sharing ideas/opinions on a public forum are more prevalent in the recent times. A significant portion of online participants are kids and teenagers. One in five 8 to 11 year olds and seven in ten 12 to 15 year olds has a social media profile. While there are useful conversations, hate and abuse is widespread in these online interactions. A study finds that almost 1 in 4 young people have come across racist or hate messages online. The most disturbing fact of all isthat 1 in 3 children have been a victim of cyberbullying. This is a clear indication that these online interactions should be controlled by the owner/administrator of the platform to eliminate or at least to minimize online harassment. The only way such a control can be implemented, at a large scale without compromising individual privacy, is by automating the process of understanding the language to detect potential abuse in a comment and reporting users if they are found to be misbehaving.</p>
+                    <br>
+                    <p class="text-light">With increasing personal content and opinions on social web platforms, there is an important need to protect their owners from abuses and threats. With the user bases of popular platforms like Reddit, Facebook etc. clocking over 500 million and growing, a time-efficient and privacy protective solution to tackle cyberbullying is an automated one that understands a user’s comment and flags them if inappropriate. In this project, we attempt to tackle this problem of an online abuse detection system. We, with the help of machine learning, experiment with a series of our own models and compare them with techniquest that were tried already. We also analyze and understand the nature of the conversations through the performance of our models.
+                    </p>
+                    <br><br>
+                    <a href="{{url_for('textanalysis')}}" class="btn btn-default btn-lg">Test Now</a>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <footer class="page-footer">
+   
+        <!-- Copyright etc -->
+        <div class="small-print">
+            <div class="container">
+                <p>HACK AMU 2019
+               <br> Disclaimer:  The quality, accuracy or completeness of data or information as result of our project is not perfect. </p>
+            </div>
+        </div>
+        
+    </footer>
+    <!-- jQuery -->
+    <script src="../static/js/jquery-1.11.3.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../static/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../static/js/jquery.easing.min.js"></script>
+    
+    <!-- Custom Javascript -->
+    <script src="../static/js/custom.js"></script>
+
+</body>
+
+</html>

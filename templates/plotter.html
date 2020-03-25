@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tweet Analyzer</title>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/custom.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <style> 
+    input[type=number ] {
+        color: black;
+        width: 100%;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url('searchicon.png');
+        background-position: 10px 10px; 
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td {
+        padding: 12px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: darkgreen;
+        color: white;
+        padding: 5px;
+        text-align: center;
+    }
+    tr:hover {background-color:lightgreen;}
+</style>
+</head> 
+<body>
+
+    <nav id="siteNav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://hackathon.zarfamu.com">
+                    HACK AMU
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="{{url_for('index')}}">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="about-us">
+                            <li><a href="{{url_for('textanalysis')}}">Text Analyser</a></li>
+                            <li><a href="{{url_for('tweeterEx')}}">Tweets Analyser</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{{url_for('index')}}#cont">Developers</a>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>Live Tweet Analyzer </h1>
+                <br>
+                <a href="#analys" class="btn btn-primary btn-lg">Analysis for TWEET no. {{y}}</a>
+                
+            </div>
+        </div>
+    </header>
+
+    <section class="intro" id="analys">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                     <h2 class="text-light">InDepth Analysis</h2>
+                    <br>
+                    {% if name[0]>20 or name[1]>20 or name[2]>20 or name[3]>20 or name[4]>20 or name[5]>20 %}
+                    <h3 class="text-light"> Selected tweet most likely includes:<br>
+                    {% if name[0]>20 %}
+                    <li> Obscenity<br></li>
+                    {% endif %}
+                    {% if name[1]>20 %}
+                    <li> Insult<br></li>
+                    {% endif %}
+                    {% if name[2]>20 %}
+                    <li> Spiteful<br></li>
+                    {% endif %}
+                    {% if name[3]>20 %}
+                    <li> Vilification<br></li>
+                    {% endif %}
+                    {% if name[4]>20 %}
+                    <li> Antagonising Nature<br></li>
+                    {% endif %}
+                    {% if name[5]>20 %}
+                    <li>Threat<br></li>
+                    {% endif %}
+                    </h3>
+                    {% else %}
+                    <h3> Selected tweet is most likely decent. </h3>
+                    {% endif %}
+                    <br>
+                    <p class="text-light">Figure below shows the category in which the selected tweet is most likely to fall under.</p>
+                    <br>
+                    <img src="{{img}}" class="center" width="450" height="450">
+                    <br><br>
+                    <h1 class="text-light">Analyse Another Tweet</h1>
+                    <br>
+                    <div class="center">{{data | safe}}</div>
+                    <br><br>
+                    <form action="{{url_for('plotter')}}" method="POST">
+                        <br>
+                        <label for="number" class="text-light"> Select Tweet No.</label>
+                        <input name="number" type="number" required>
+                        <br><br>
+                        <input type="submit" class="btn btn-default btn-lg" value="Analyse">
+                    </form>
+                    <br>
+                    <h3 class="text-light">or</h3>
+                    <br>
+                    <a href="{{url_for('tweeterEx')}}" class="btn btn-default btn-lg">RESET TWEETS</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="page-footer">
+        <div class="small-print">
+            <div class="container">
+                <p>HACK AMU 2019
+               <br> Disclaimer:  The quality, accuracy or completeness of data or information as name of our project is not perfect. </p>
+            </div>
+        </div>
+    </footer>
+    <script src="../static/js/jquery-1.11.3.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/jquery.easing.min.js"></script>
+    <script src="../static/js/custom.js"></script>
+
+</body>
+</html>

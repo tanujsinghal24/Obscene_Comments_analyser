@@ -1,0 +1,5 @@
+access_token = "1115607808185995264-em8QLLFJ6ESWiVRM5G77euAA0rmaxU"
+access_token_secret = "pnfdtIsloJsg9huAUb8mVAMApYqv9fyiJRqdTaJwkYvS0"
+consumer_key = "wM7VnB9KDsU1ZiezePZmyRSZo"
+consumer_secret = "0Vd3EiWZQppmOTkd8s8lTynU1T9rBs5auMQQvJy9xNE1O49yXJ"
+filename = "/Users/tanujsinghal/Documents/trained_models/toxic-text-analyser/tweetsa.txt"
